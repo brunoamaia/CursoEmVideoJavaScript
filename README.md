@@ -1,2 +1,2 @@
 # CursoEmVideoJavaScript
- Exemplos e exercícios do cruso de JavaScript do Curso em Vídeo
+ Exemplos e exercícios do curso de JavaScript do Curso em Vídeo
