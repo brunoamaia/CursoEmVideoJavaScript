@@ -1,0 +1,33 @@
+<!DOCTYPE html>         <!-- Forma de  comentar no HTML -->
+<html lang="pt-br">     <!-- Informa o idioma da página -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    
+    <style>             /* Foma de comentar no estilo (CSS) */
+        body {          /* <style> - Começa a utiliar o CSS (configura a aparência da página) */
+            background-color: rgb(123, 228, 228);   /* Cor do fundo da região do "body" (criado à frente) */
+            color: dimgray;                         /* Cor da fonte */
+            font: normal 10pt Arial;
+        }
+
+        h1 {
+            color: goldenrod;     /* Muda a cor da fonte do Título (h1) */
+        }                           /* Quando não passa nenhum parâmetro, utiliza os que estão no corpo (body) */
+     </style>
+</head>
+<body>
+    <h1>Olá, mundo!!!</h1> <!-- H1 - infoma que temos  um título de nível 1 -->
+    <p>Já me livrei da maldição.</p> <!-- p - informa que temos um parágrafo -->
+    <p>\o/</p>
+
+    <script>                // Script é onde chama as funções do JavaScript - A parte de Interatividade
+                            // Em JavaScript não é necessário utilizar ";" (igual no Python)
+                            // Comumente, o JavaScript é colocado no final do "corpo do HTML" que se deseja inserir o "Script/aplicação/função"
+        window.alert('Minha primeira mensagem')     // Abre uma janela no navegador mostrando o que está nos parenteses
+        window.confirm('Está gostando do JavaScript (JS)?') // Abre uma janela que tem a opção de Confirmar, ou Cancelar
+        window.prompt('Qual seu nome?')     // Abre uma janela que permite que sejam digitadas informações.
+    </script>    
+</body>
+</html>
