@@ -44,7 +44,13 @@
         var soma = n1 + n2                              // Caso a String não seja convertida em número, será realizada uma concatenação
         
         //window.alert('A soma dos valores é: ' + String(soma))
-        window.alert(`A soma de ${n1} com ${n2} é: ${soma}`)
+        window.alert(`A soma de ${n1} com ${n2} é: ${soma.toFixed(2).replace('.',',')}`)    // toFixed(n) fixa o valor com n casas decimais. replace('x','y') - troca "x" por "y"
+        //window.alert(soma.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}))
+        window.alert(`Em formato de Real, fica: ${soma.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`)
+        window.alert(`Em formato de Dolar, fica: ${soma.toLocaleString('pt-br', {style: 'currency', currency: 'USD'})}`)
+        window.alert(`Em formato de Euro, fica: ${soma.toLocaleString('pt-br', {style: 'currency', currency: 'EUR'})}`)
+        window.alert('Ué')
+
     </script>
 </body>
 </html>

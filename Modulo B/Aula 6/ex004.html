@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var nome = window.prompt('Qual é o seu nome?')
+        document.write(`Olá, ${nome}! <br>`)         // "document.write" escreve diretamenta na página 
+        document.write(`Seu nome tem <strong>${nome.length}</strong> letras.<br>`)      // <strong> deixa em negrito  e <br> faz quebra de linha
+        document.write(`Com todas as letras em maiúsculo, fica: ${nome.toUpperCase()}<br>`)
+        document.write(`Com todas as letras em minúsculo, fica: ${nome.toLocaleLowerCase()}`)
+    </script>
+</body>
+</html>
