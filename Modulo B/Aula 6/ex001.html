@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6</title>
+
+    <style>     /* CSS */
+        body {
+            background-color: rgb(105, 105, 173);
+            color: white;
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>                  <!-- HTML -->
+    <h1>Aula 6</h1>     
+    <p>Tratamento de dados</p>
+
+    <script>        // JavaScript
+        var nome = window.prompt('Qual é seu nome?')
+        window.alert('É um grande prazer te conhecer ' + nome)  // Concatenação de frase com variável
+
+        /*  Conversão entre String e Número
+        var n1 = window.prompt('Digite um número:')     // o "window.prompt" retorna por padrão uma string
+        var n2 = window.prompt('Digite outro número:')
+
+            Number(n)               Converte para número
+            Number.parseInt(n)      Converte em número Inteiro
+            Number.parseFloat(n)    Converte em número Decimal
+
+            n.toString()    // Formas de converter para String
+            String(n)
+        */
+
+        /*  Formatar String / textos
+
+            'texto' + variável + ...    // Utilizando concatenação
+            `O aluno ${aluno} com idade ${idade}, tirou a nota ${nota} ` // Utiliza Crase para fazer o "template string" que permite o "place holder" ${} (esoclher o local de cada variável)
+        */
+        
+        var n1 = Number(window.prompt('Digite um número:'))
+        var n2 = Number(window.prompt('Digite outro número:'))
+        var soma = n1 + n2                              // Caso a String não seja convertida em número, será realizada uma concatenação
+        
+        //window.alert('A soma dos valores é: ' + String(soma))
+        window.alert(`A soma de ${n1} com ${n2} é: ${soma}`)
+    </script>
+</body>
+</html>
