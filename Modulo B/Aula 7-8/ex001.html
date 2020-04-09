@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas 7 e 8</title>
+
+    <style>
+        body {
+            background-color: darkcyan;
+            color: #59f57b;
+            font: 10pt Roboto;
+        }
+        strong {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aulas 7 e 8</h1>
+    <h2>Operadores</h2>
+
+        <h3>Aritméticos</h3>
+            <ul>
+                <li>+  : &emsp;Soma (5+2=7)</li>    <!-- &emsp; um tipo de espaço -->
+                <li>-  : &emsp;Subtração (5-2=3)</li>
+                <li>*  : &emsp;Multiplicação (5*2=10)</li>
+                <li>/  : &emsp;Divisão (5/2=2,5)</li>
+                <li>%  : &emsp;Resto da divisão inteira (5%2=1)</li>
+                <li>** : &emsp;Potenciação (5**2=25)</li>
+                <p>Precedência: ( ) &emsp;>&emsp; ** &emsp;>&emsp;  *, /, % &emsp;>&emsp;  +, -</p>
+            </ul>
+
+        <h3>Atribuição</h3>
+            <ul>
+                <li> n+=x  &emsp;=> n = n+x </li>
+                <li> n-=x  &emsp;=> n = n-x </li>
+                <li> n*=x  &emsp;=> n = n*x </li>
+                <li> n/=x  &emsp;=> n = n/x </li>
+                <li> n**=x  &emsp;=> n = n**x </li>
+                <li> n%=x  &emsp;=> n = n%x </li>
+            </ul>
+
+        <h3>Relacionais</h3>
+            <ul>
+                <li>5>2 &emsp;=> true</li>
+                <li>7<4 &emsp;=> false</li>
+                <li>8>=8 &emsp;=> true</li>
+                <li>9<=7 &emsp;=> false</li>
+                <li>5=='5' &emsp;=> true (verifica apenas o que foi armazenado)</li>
+                <li>5==='5' &emsp;=>false (verifica o valor/string e os tipos)</li>
+                <li>4!=4 &emsp;=> false</li>
+            </ul>
+
+        <h3>Lógicos</h3>
+            <ul>
+                <li>! -> Negação</li>
+                <li>&& -> Conjunção (e)</li>
+                <li>|| -> Disjunção (ou)</li>
+            </ul>
+
+        <h3>Ternário</h3>
+        <ul> <strong> ? : </strong> &emsp;(Funciona como um teste de erro)</ul>
+        <ul>teste <strong>?</strong> true <strong>:</strong> false &emsp;(Teste tal coisa, se for vedadeiro faça A, se for falso, faça B)</ul>
+        <ul>Exemplo: &emsp;nota>6 <strong>?</strong> 'Aprovado' <strong>:</strong> 'Reprovado'</ul>
+        
+    <h2>Precedência Geral</h2>
+    <li>Aritméticos: ( ), **, *, /, +, -</li>
+    <li>Atribuição: <, >, <=, >=, ==, != </li>
+    <li>Negação: !</li>
+    <li>Conjunção: &&</li>
+    <li>Disjunção: ||</li>
+    
+</body>
+</html>
