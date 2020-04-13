@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+
+    <style>
+        body {
+            background-color: deepskyblue;
+            color: white;
+            font: normal 10pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com o DOM</h1>
+    <h2>DOM - <strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel 
+        (Modelo de Objeto para Documentos) <br>
+        É um conjunto de ojetos dentro do navegador que da acesso aos componentes internos do site </h2>
+
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <div class="msg">Vamos lá ...</div>
+
+    <script>
+        var p1 = window.document.getElementsByTagName('p')  [1] // Selecionar elemento por "nome", no caso é o segundo [1] parágrafo (p)
+        var d1 = window.document.getElementById('msg')           // Seleciona um elemento pelo seu "Id"
+        // Quando o comando é no plural (Elements) é necessário informar a posição [n]
+        // Quando o comando é no singular (Element) é necessário informar apenas o elemento
+        
+        var d2 = window.document.querySelector("div#msg")   // Forma mais nova de selecionar id
+        var d3 = window.document.querySelector("div.msg")   // Forma mais nova de selecionar classe
+        
+
+        window.document.write(`Está esctrito: ${p1.innerText} <br>`) // Mostar o texto selecionado anterioemente
+        window.document.write("Está esctrito: " + p1.innerHTML) // innerText pega apenas o texto (remove formatações) e innerHTML pega o texto com as formatações html
+        p1.style.color = 'yellow'   // Modificar a cor do texto (selecionado em p1) pelo DOM (JavaScript)
+        d1.style.background = 'green'    // Modificar a cor elemento selecionado
+        d1.innerText = "Estou aguardando ..."
+        
+        window.document.querySelector("div.msg").innerText="Olá ..."    //Forma de já selecionar e realizar uma modificação
+        d3.style.background="orange"
+
+    </script>
+</body>
+</html>
