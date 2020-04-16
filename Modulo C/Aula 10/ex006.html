@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+
+    <style>
+        div#texto1 {  /* Selecio uma div por id (#) */ 
+            background: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px; /* Centralizar a altura e a linha  */
+            text-align: center;
+        }
+
+        div#texto2 {  /* Selecio uma div por id (#) */ 
+            background: blue;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px; /* Centralizar a altura e a linha  */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="texto1" onclick="clicar()"  onmouseenter="entrar()" onmouseout="sair()">  
+        <!-- Cria uma div com um Id e que ativa uma função ao clicar (onclick)
+            uma quando o mouse entra na "box" (onmouseenter) e uma quando o mouse sai da "box" (onmouseout)
+            (a função deve ser criada) -->
+        Interajaaa ...
+    </div>
+
+    <div id="texto2">
+        Vamos la ...
+    </div>
+
+
+    <script>
+        var t1 = window.document.getElementById('texto1')     // Variável Glogal para realizar as modificações pelo HTML
+        var t2 = window.document.getElementById('texto2')
+        
+        t2.addEventListener('mouseenter', entrar1)  // Configurar pelo JavaScript
+        t2.addEventListener('mouseout', sair1)      // addEventListener - "escuta" o que está sendo realizado na pagina
+        t2.addEventListener('clik', clicar1)
+        
+        
+        function clicar() {         // Ativado ao clicar no primeiro elemento
+            // var ar = window.document.getElementById('texto1')      // Pode criar uma variável separada para depois aplicar os métodos, ou
+            //window.document.getElementById('texto1').innerText = 'Clicou!'    // Já chama a variável e aplica o método
+            t1.innerText = 'Clicou!'
+        }
+        function entrar() {
+            t1.innerText = 'Vai clicar?'
+        }
+        function sair() {
+            t1.innerText = 'Saiu'
+        }
+
+        
+        function entrar1() {        // Ativado ao clicar no segundo elemento
+            t2.innerText = 'Vai clicar?'
+        }
+        function sair1() {
+            t2.innerText = 'Saiu'
+        }
+        function clicar1() {         
+            t2.innerText = 'Clicou!'
+        }
+    </script>
+</body>
+</html>
