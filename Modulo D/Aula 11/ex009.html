@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Nacionalidade</title>
+
+    <style>
+        body{
+            background: darkslategrey;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificação de Nacionalidade</h1>
+    Verificaremos sua nacionalidade, caso seja nascido(a) no Brasil <br>
+    Informe em qual pais você mora atualmente 
+    <input type="text" name="pais" id="paisinformado"> 
+    <input type="button" value="Verificar" id="verificar" onclick="teste()">
+    <div id="resposta">
+        Resposta ...
+    </div>
+
+
+
+    <script>
+        function teste() {
+            var pais = window.document.getElementById('paisinformado')
+            var resultado = window.document.querySelector('div#resposta')
+            var pinf = String(pais.value)
+
+            if (pinf =='Brasil'|| pinf =='Brazil'|| pinf =='brasil'|| pinf =='brazil'){
+                resultado.innerHTML = `Como você mora no Brasil, você é Brasileiro!`
+            } else {
+                resultado.innerHTML = `Como você mora no(a) ${pinf}, você é Estrangeiro`
+            }
+
+        }
+    </script>
+</body>
+</html>
