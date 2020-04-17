@@ -5,7 +5,11 @@ function calcular() {
     var datatual = new Date
     var anoatual = datatual.getFullYear()
     var sex = ''
-    
+ 
+    // Outra forma de chamar inserir imagem na página de forma dinamica [Não está sendo utilizada]
+    var img = window.document.createElement('img')  // Criar a imagem
+    img.setAttribute('id','foto')                   // Adicionar atributo (id) na imagem
+
     ano = Number(ano.value)
 
     if (ano < 30 ) {    // Ajustar a idade, caso digite apenas os 2 ultimos valores (91, 02, ...)
@@ -25,6 +29,8 @@ function calcular() {
 
     if (idade < 0) {            // Valor errado
         saida.innerHTML = 'O ano informado é maior que que o ano atual. <br>Por favor, tente novamente!'
+
+        //img.setAttribute('src', './src/foto.png') // forma dinamica de inserir a imagem
 
     } else if (idade < 3) {     // Bebê (0 à 2 anos)
         if (sex == 'mas') {
