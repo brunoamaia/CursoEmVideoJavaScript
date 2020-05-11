@@ -7,19 +7,23 @@
 
     <link rel="stylesheet" href="estilo.css">   <!-- Chmada do Css -->
 </head>
-<body onload="carregar()">
+<body>
 
     <header>
-        <h1>Hora do dia</h1>
+        <h1>Vamos Contar</h1>
     </header>
 
     <section>
-        <div id="msg">
-            Aqui vai aparecer a mensagem ...
+        <div id="holder">
+            Início:  <input type="number" name="inicio" id="inicio"> <br>
+            Fim:     <input type="number" id="fim"> <br>
+            Passo: <input type="number" id="passo"> <br>
+            <button onclick="contador()">Contar</button>
         </div>
         
-        <div id="foto">
-            <img id="imagem" src="./src/fmanha.png" alt="foto do dia">
+        <div id="result">
+            Resultado
+            
         </div>
     </section>
 
