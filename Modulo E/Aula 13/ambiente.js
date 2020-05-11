@@ -14,4 +14,4 @@ do {
 } while ( c2 <= 6)
 
 
-// Executar pelo console Ctrl+F5
+// Executar pelo console F8
