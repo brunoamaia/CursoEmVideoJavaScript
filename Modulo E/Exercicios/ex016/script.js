@@ -1,31 +1,46 @@
 function contador () {
 
-    var inicio = window.document.getElementById('inicio')
-    var fim = window.document.getElementById('fim')
-    var passo = window.document.getElementById('passo')
+    let inicio = window.document.getElementById('inicio')
+    let fim = window.document.getElementById('fim')
+    let passo = window.document.getElementById('passo')
+    let res = window.document.getElementById('result')
+
+    // Verificar se não foi digitado algum valor
+    if (inicio.value.length == 0 ) {
+      return  res.innerHTML = 'Digite um valor para Iniciar a contagem!!!'
+    }
+    if (fim.value.length == 0 ) {
+        return  res.innerHTML = 'Digite um valor para Terminar a contagem!!!'
+    }
+    if (passo.value.length == 0 ) {
+        return  res.innerHTML = 'Digite um valor para o Passo!!!'
+    }
+
+    // Caso todos os valores tenham sido digitados, vamos pegá-los
     inicio = Number(inicio.value)
     fim = Number(fim.value)
     passo = Number(passo.value)
 
-    var res = window.document.getElementById('result')
-
-
-    if (inicio == null) {
-        return window.alert('Por favor, digite um valor para iniciar o contador!!')
+    //Verificar se o início eé diferente do fim
+    if (inicio == fim) {
+        return res.innerHTML = 'O valor do Fim, deve ser diferente do valor do início'
     }
-    if (fim == null) {
-        return window.alert('Por favor, digite um valor para terminar o contador!!')
-    }
-    if (passo == null) {
-        return window.alert('Por favor, digite um valor para o tamanho do passo!!')
-    }
-
-    if (fim < inicio) {
-        return window.alert('O valor do Final deve ser Maior que o valor do Início')
+    // Verificar se o passo é válido
+    if (passo <= 0) {
+        window.alert('O valor do passo é inválido. \nSerá utilizado Passo = 1.')
+        passo = 1
     }
 
     res.innerHTML = `${inicio}`
-    for (let c = inicio+passo; c <= fim; c=c+passo) {
-        res.innerHTML += ` ➔ ${c} `
+    if (inicio < fim) {
+        for (let c = inicio+passo; c <= fim; c += passo) {
+            res.innerHTML += ` ↣ ${c} `
+        }
+    } else {
+        for (let c = inicio-passo; c >= fim; c -= passo) {
+            res.innerHTML += ` ↣ ${c} `
+        }
     }
+    res.innerHTML += `↣🏁`
+    
 }
