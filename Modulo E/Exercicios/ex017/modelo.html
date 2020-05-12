@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hora do dia</title>
+    <title>Tabuada</title>
 
     <link rel="stylesheet" href="estilo.css">   <!-- Chmada do Css -->
 </head>
-<body onload="carregar()">
+<body>
 
     <header>
-        <h1>Hora do dia</h1>
+        <h1>Exercício 17 <br> Hora da Tabuada</h1>
     </header>
 
     <section>
         <div id="msg">
-            Aqui vai aparecer a mensagem ...
+            Digite um valor: 
+            <input type="number" id="valor">
+            <button onclick="tabuada()"> Calcular </button>
         </div>
         
-        <div id="foto">
-            <img id="imagem" src="./src/fmanha.png" alt="foto do dia">
+        <div id="resultado">
+            <div id="css"></div>
+            <select name="tabuada" id="select" size="10"></select>
         </div>
     </section>
 

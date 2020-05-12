@@ -1,29 +1,34 @@
 
-function carregar() {
-    var msg = window.document.getElementById('msg')
-    var img = window.document.getElementById('imagem')
-    var data = new Date()
-    var hora = data.getHours()
-    var minuto = data.getMinutes()
-
-    if (minuto < 10) {      // Ajustar a forma de aparecer os minutos
-        minuto = `0${minuto}`
+function tabuada() {
+    let valor = window.document.getElementById('valor')
+    let res = window.document.getElementById('resultado')
+    let css = window.document.getElementById('css')
+    let sel = window.document.getElementById('select')
+    
+    if (valor.value.length == 0) {
+        return res.innerHTML = 'Informe um valor para ser calculado!!!'
     }
 
-    msg.innerHTML = `Agora são ${hora}:${minuto}.<br>`
+    valor = Number(valor.value)
+
+    // Limpar a região de resposta
+ 
+    css.innerHTML = ''
+    sel.innerHTML = ''
+
+    // Formatação para o "css"
     
-    
-    if (hora < 12) {
-        msg.innerHTML += 'Bom Dia!!!'
-        img.src = './src/fmanha.png'
-        window.document.body.style.background = '#df9e02' //efa000
-    } else if (hora <= 18) {
-        msg.innerHTML += 'Boa Tarde!!!'
-        img.src = './src/ftarde.png'
-        window.document.body.style.background = '#2d6a87' //c3ddfe
-    } else {
-        msg.innerHTML += 'Boa Noite!!!'
-        img.src = './src/fnoite.png'
-        window.document.body.style.background = '#564a5f'
+    for (let i = 1; i <= 10; i++) {
+        css.innerHTML += `${valor} ‧ ${i} = ${valor*i} <br>`
+    }
+
+    // formatação para o "select"
+    let c = 1
+    while (c<=10) {
+        let item = document.createElement('option') // Criar uma opção para o select - é necessário para o PHP
+        item.text = `${valor} ‧ ${c} = ${valor*c}`  // texto da opção
+        item.value = `tab${c}`                     // Valor da opção (PHP)
+        sel.appendChild(item)
+        c++
     }
 }

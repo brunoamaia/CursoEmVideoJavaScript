@@ -27,3 +27,21 @@ footer {
     text-align: center;
     font-style: italic;
 }
+
+#resultado {
+    display: flex;
+    justify-content: space-between;
+}
+
+#css {
+    height: 260px;
+    color: inherit;
+    text-align: left;
+    width: 200px;
+}
+
+#select {
+    font: normal 15pt Times;
+    height: 260px;
+    width: 200px;
+}
