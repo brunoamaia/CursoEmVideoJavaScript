@@ -64,7 +64,7 @@ for (let i = 0; i < nomes.length; i++) {
     console.log(`A posição ${i} tem o nome: ${nomes[i]}`)
 }
 
-console.log('Buscar a posição/indice de um valor/elemento')
+console.log('\nBuscar a posição/indice de um valor/elemento')
 let busca = 8
 let indice = numeros.indexOf(busca)
 if (indice == -1) {
