@@ -10,17 +10,21 @@ console.log(`\nOs vetores estão apresentados a seguir: \nnomes: ${nomes} \nnúm
 
 
 console.log('\nVariável de teste 1')
+console.log('Receber os vetores como um vetor:')
 let test1 = [numeros, nomes]
-console.log(test1)
-console.log(test1.length)
+console.log(`Tamanho do vetor: ${test1.length}`)
+console.log('Vetor ordenado: ')
 console.log(test1.sort())
 
 console.log('\nVariável de teste 2')
+console.log('Receber os vetores como uma concatenação')
 let test2 = nomes + numeros   // Não é possível ordenar (junta todos os valores como um "textão")
+console.log(`Tamanho do vetor: ${test2.length}`)
+console.log('O vetor não pode ser ordenado, pois se tornou uma String "gigante": ')
 console.log(test2)
-console.log(test2.length)
 
 console.log('\nVariável de teste 3')
+console.log('Pegar os valores de "numeros" e depois de "nomes" para verificar o que acontece: ')
 let test3 = []
 for (let i = 0; i < numeros.length; i++) {
     test3[i] = numeros[i]
@@ -29,10 +33,12 @@ n = test3.length
 for (let i = n; i < n+nomes.length; i++){
     test3[i] = nomes[i-n]
 }
-console.log(test3.length)
+console.log(`Tamanho do vetor: ${test3.length}`)
+console.log('Vetor ordenado: ')
 console.log(test3.sort())
 
 console.log('\nVariável de teste 4')
+console.log('Pegar os valores de "nomes" e depois de "numeros" para verificar o que acontece: ')
 let test4 = []
 for (let i = 0; i < nomes.length; i++) {
     test4[i] = nomes[i]
@@ -41,10 +47,19 @@ n = test4.length
 for (let i = n; i < n+numeros.length; i++){
     test4[i] = numeros[i-n]
 }
-console.log(test4.length)
+console.log(`Tamanho do vetor: ${test4.length}`)
+console.log('Vetor ordenado: ')
 console.log(test4.sort())
 
-
+console.log('\nDe forma ordenada, os vetores ficaram da seguinte forma:')
+console.log('Números:')
 numeros.sort()
-console.log(numeros)
-console.log(nomes.sort())
+for (let i = 0; i < numeros.length; i++) {
+    console.log(`A posição ${i} tem o valor: ${numeros[i]}`)
+}
+
+console.log('Nomes:')
+nomes.sort()
+for (let i = 0; i < nomes.length; i++) {
+    console.log(`A posição ${i} tem o nome: ${nomes[i]}`)
+}
