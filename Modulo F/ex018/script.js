@@ -5,17 +5,23 @@ let sord = window.document.querySelector('select#sord')
 let cord = window.document.querySelector('select#cord')
 
 function adicionar() {
-    let number = window.document.querySelector('input#entrada')
-    
+    let num = document.querySelector('input#entrada') // "num" será utilizado para resetar a janela no navegador
+    // Passa o valor informado para a variável que será utilizada no restante do codigo
+    let number = Number(num.value) 
+
     res.innerHTML=''    // Resetar a mesagem da tela
     
     //                  Testar possiveis erros          //
     // Não digitou nenhum valor
-    if (number.value.length == 0) {
+    if (num.value.length == 0) {
+        num.focus()
         return res.innerHTML = 'Por favor, informe um número!'
+        
     }
 
-    number = Number(number.value)
+    num.value = '' // Limpa a área em que se digita os valores
+    num.focus()
+
     // valor informado está fora dos limites
     if (number<1 || number>100) {
        return res.innerHTML = 'O valor informado deve estar entre 1 e 100!'
