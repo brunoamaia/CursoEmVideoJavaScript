@@ -26,7 +26,13 @@ function adicionar(valores=[]) {
         
     }
 
-    valores.push(number)
+    // Remover o indicador que nada foi informado
+    if (valores[0] == -1) {
+        valores[0] = number
+    } else {
+        valores.push(number)
+    }
+    
     let n = valores.length
 
     // Tabela com a sequencia informada
@@ -92,7 +98,7 @@ function finalizar() {
         res.innerHTML += `O maior valor informado foi: ${ordem[valores.length - 1]}. <br>`
         res.innerHTML += `O menor valor informado foi: ${ordem[0]} <br>`
         res.innerHTML += `Somando todos os valores, temos ${soma} <br>`
-        res.innerHTML += `A média dos valores digitados é: ${media}  <br>`
+        res.innerHTML += `A média dos valores digitados é: ${media.toFixed(2)}  <br>`
         res.innerHTML += ` <br>`
     }
     
