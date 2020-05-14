@@ -1,0 +1,47 @@
+body {
+    background: #1e71df;
+    font: normal 15pt Times;
+    color: white;
+}
+
+header {
+    text-align: center;
+}
+
+section {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    text-align: center;
+}
+
+div {
+    padding: 8px;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+}
+
+#resultado {
+    display: flex;
+    justify-content: space-between;
+}
+
+#css {
+    height: 260px;
+    color: inherit;
+    text-align: left;
+    width: 200px;
+}
+
+#select {
+    font: normal 15pt Times;
+    height: 260px;
+    width: 200px;
+}
