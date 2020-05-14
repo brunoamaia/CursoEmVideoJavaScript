@@ -1,7 +1,9 @@
 function adicionar() {
     let number = window.document.getElementById('entrada')
     let res = window.document.getElementById('resultado')
-
+    let sord = window.document.getElementById('sord')
+    let cord = window.document.getElementById('cord')
+    
     res.innerHTML=''    // Resetar a mesagem da tela
     
     //                  Testar possiveis erros          //
@@ -17,6 +19,17 @@ function adicionar() {
         res.innerHTML = 'O valor informado deve estar entre 1 e 100!'
     }
 
+    let c1 = 1
+    let itema = document.createElement('option') // Criar uma opção para o select - é necessário para o PHP
+    itema.text = `Valor ${number} adicionado.`  // texto da opção
+    itema.value = `tab${c1}`                     // Valor da opção (PHP)
+    sord.appendChild(itema)
     
-    
+
+    let c2 = 1
+    let itemb = document.createElement('option') // Criar uma opção para o select - é necessário para o PHP
+    itemb.text = `${number}`  // texto da opção
+    itemb.value = `tab${c2}`                     // Valor da opção (PHP)
+    cord.appendChild(itemb)
+
 }
