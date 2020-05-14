@@ -73,6 +73,7 @@ function adicionar() {
 
 
 function finalizar() {
+    let num = document.querySelector('input#entrada')
     let ordem = valores
     let soma = 0
     let media = 0
@@ -103,10 +104,12 @@ function finalizar() {
         res.innerHTML += `A média dos valores digitados é: ${media.toFixed(2)}  <br>`
         res.innerHTML += ` <br>`
     }
+    num.focus()
 }
 
 
 function resetar() {
+    let num = document.querySelector('input#entrada')
     let n = valores.length
 
     if (n > 0) {    // resetar as select
@@ -117,4 +120,5 @@ function resetar() {
     }
     valores = [-1]
     res.innerHTML = 'Todos os dados foram resetados!!'
+    num.focus()
 }
