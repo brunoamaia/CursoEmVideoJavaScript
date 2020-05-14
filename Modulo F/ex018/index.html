@@ -12,15 +12,23 @@
     </header>
     
     <section>
-        Sessão A
-        <div>
-            Div 1
+        Número (entre 1 e 100)
+        <input type="number" id="entrada">
+        <button onclick="adicionar()">Adicionar</button>
+
+        <div class="visualização">
+            <div class="valores">
+                <select name="semordem" id="sord"></select>
+            </div>
+            <div class="ordenacao">
+                <select name="comordem" id="cord"></select>
+            </div>
         </div>
-        Sessão B
-        <div>
-            Div 2
+
+        <button onclick="finalizar()" class="finalizar">Finalizar</button>
+        
+        <div id="resultado">
         </div>
-        Sessão C
     </section>
 
     <footer>
