@@ -33,6 +33,10 @@ div {
     padding: 8px;
 }
 
+#resultado {
+    text-align: left;
+}
+
 footer {
     text-align: center;
     font-style: italic;

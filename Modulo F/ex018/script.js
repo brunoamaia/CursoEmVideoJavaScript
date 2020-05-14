@@ -60,5 +60,41 @@ function adicionar(valores=[]) {
         itemb.value = `tab${i+1}`                     // Valor da opção (PHP)
         cord.appendChild(itemb)
     }
+}
 
+
+function finalizar() {
+    let res = window.document.getElementById('resultado')
+    let ordem = valores
+    let soma = 0
+    let media = 0
+
+    function ordenar(a, b) { // Função necessária para realizar a ordenação de forma correta
+        return a - b
+    }
+    ordem.sort(ordenar) // array ordenado
+
+    // Somar os elementos
+    for (let i = 0; i < valores.length; i++) {
+        soma += valores[i]
+    }
+
+    media = soma/valores.length
+
+    if (valores[0] == -1) {
+        res.innerHTML += `Nenhum valor foi informado <br>`
+    } else if (valores.length == 1) {
+        res.innerHTML =`Foi informado apenas o valor  ${valores[0]}. <br> 
+        Portanto, não é necessário verificar quem é o maior, nem o menor. <br>
+        Nem calcular a média do mesmo.`
+    } else {
+        res.innerHTML = `Ao todo, temos ${valores.length} números cadastrados. <br>`
+        res.innerHTML += `O maior valor informado foi: ${ordem[valores.length - 1]}. <br>`
+        res.innerHTML += `O menor valor informado foi: ${ordem[0]} <br>`
+        res.innerHTML += `Somando todos os valores, temos ${soma} <br>`
+        res.innerHTML += `A média dos valores digitados é: ${media}  <br>`
+        res.innerHTML += ` <br>`
+    }
+    
+    
 }
