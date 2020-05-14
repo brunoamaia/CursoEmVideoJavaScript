@@ -19,6 +19,13 @@ function adicionar(valores=[]) {
        return res.innerHTML = 'O valor informado deve estar entre 1 e 100!'
     }
 
+    for (let i = 0; i < valores.length; i++) {
+        if (valores[i] == number) {
+            return res.innerHTML = `Digite um valor novo, ${number} já foi informado`
+        }
+        
+    }
+
     valores.push(number)
     let n = valores.length
 
@@ -32,7 +39,12 @@ function adicionar(valores=[]) {
  
     
     let ordem = valores
-    ordem.sort()
+
+    function ordenar(a, b) { // Função necessária para realizar a ordenação de forma correta
+        return a - b
+    }
+    ordem.sort(ordenar) // array ordenado
+
     // Tabela com a sequencia Ordenada
 
     //Limpar a tabela antiga (caso exista)
@@ -41,8 +53,7 @@ function adicionar(valores=[]) {
             cord.remove(cord.length-1);
         }
     }
-
-    window.alert(ordem)
+    // Criar uma nova tabela, agora ordenada
     for (let i = 0; i < n; i++) {
         let itemb = document.createElement('option') // Criar uma opção para o select - é necessário para o PHP
         itemb.text = `${ordem[i]}`  // texto da opção
