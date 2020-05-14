@@ -1,8 +1,8 @@
 function adicionar(valores=[]) {
-    let number = window.document.getElementById('entrada')
-    let res = window.document.getElementById('resultado')
-    let sord = window.document.getElementById('sord')
-    let cord = window.document.getElementById('cord')
+    let number = window.document.querySelector('input#entrada')
+    let res = window.document.querySelector('div#resultado')
+    let sord = window.document.querySelector('select#sord')
+    let cord = window.document.querySelector('select#cord')
     
     res.innerHTML=''    // Resetar a mesagem da tela
     
@@ -88,7 +88,7 @@ function finalizar() {
     media = soma/valores.length
 
     if (valores[0] == -1) {
-        res.innerHTML += `Nenhum valor foi informado <br>`
+        res.innerHTML = `Nenhum valor foi informado!!! <br>`
     } else if (valores.length == 1) {
         res.innerHTML =`Foi informado apenas o valor  ${valores[0]}. <br> 
         Portanto, não é necessário verificar quem é o maior, nem o menor. <br>
