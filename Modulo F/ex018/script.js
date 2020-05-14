@@ -20,29 +20,34 @@ function adicionar(valores=[]) {
     }
 
     valores.push(number)
-
     let n = valores.length
 
+    // Tabela com a sequencia informada
     let c1 = n
-
-    window.alert(c1)
     let itema = document.createElement('option') // Criar uma opção para o select - é necessário para o PHP
     itema.text = `Valor ${valores[c1-1]} adicionado.`  // texto da opção
     itema.value = `tab${c1}`                     // Valor da opção (PHP)
     sord.appendChild(itema)
-    window.alert('item A')
 
  
     
+    let ordem = valores
+    ordem.sort()
+    // Tabela com a sequencia Ordenada
 
-    number = valores
-    number.sort()
-    let c2 = 1
-    let itemb = document.createElement('option') // Criar uma opção para o select - é necessário para o PHP
-    itemb.text = `${number}`  // texto da opção
-    itemb.value = `tab${c2}`                     // Valor da opção (PHP)
-    cord.appendChild(itemb)
+    //Limpar a tabela antiga (caso exista)
+    if (cord.length > 0) {
+        for (let i = cord.length; i >= 1 ; i--) {
+            cord.remove(cord.length-1);
+        }
+    }
 
-    window.alert(valores)
+    window.alert(ordem)
+    for (let i = 0; i < n; i++) {
+        let itemb = document.createElement('option') // Criar uma opção para o select - é necessário para o PHP
+        itemb.text = `${ordem[i]}`  // texto da opção
+        itemb.value = `tab${i+1}`                     // Valor da opção (PHP)
+        cord.appendChild(itemb)
+    }
 
 }
