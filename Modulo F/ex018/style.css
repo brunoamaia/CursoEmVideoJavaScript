@@ -33,6 +33,10 @@ div {
     padding: 8px;
 }
 
+select{
+    width: 180px;
+}
+
 #resultado {
     text-align: left;
 }
