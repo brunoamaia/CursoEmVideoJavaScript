@@ -1,13 +1,15 @@
-function adicionar(valores=[]) {
+// Iniciar uma variável global, ao carregar a página 
+var valores = [-1]
+let res = window.document.querySelector('div#resultado')
+let sord = window.document.querySelector('select#sord')
+let cord = window.document.querySelector('select#cord')
+
+function adicionar() {
     let number = window.document.querySelector('input#entrada')
-    let res = window.document.querySelector('div#resultado')
-    let sord = window.document.querySelector('select#sord')
-    let cord = window.document.querySelector('select#cord')
     
     res.innerHTML=''    // Resetar a mesagem da tela
     
     //                  Testar possiveis erros          //
-
     // Não digitou nenhum valor
     if (number.value.length == 0) {
         return res.innerHTML = 'Por favor, informe um número!'
@@ -18,17 +20,15 @@ function adicionar(valores=[]) {
     if (number<1 || number>100) {
        return res.innerHTML = 'O valor informado deve estar entre 1 e 100!'
     }
-
-    for (let i = 0; i < valores.length; i++) {
-        if (valores[i] == number) {
-            return res.innerHTML = `Digite um valor novo, ${number} já foi informado`
-        }
-        
+    //Valor informado já foi digitado
+    if (valores.indexOf(number) != -1) {
+        return res.innerHTML = `Digite um valor novo, ${number} já foi informado`
     }
 
-    // Remover o indicador que nada foi informado
-    if (valores[0] == -1) {
-        valores[0] = number
+
+    // Se o valor passou nos testes anteiores, vames utilizá-lo
+    if (valores[0] == -1) {     // O primeiro valor informado, 
+        valores[0] = number     // Remove o indicador que nada foi informado (inicialização da variável)
     } else {
         valores.push(number)
     }
@@ -42,10 +42,7 @@ function adicionar(valores=[]) {
     itema.value = `tab${c1}`                     // Valor da opção (PHP)
     sord.appendChild(itema)
 
- 
-    
     let ordem = valores
-
     function ordenar(a, b) { // Função necessária para realizar a ordenação de forma correta
         return a - b
     }
@@ -70,7 +67,6 @@ function adicionar(valores=[]) {
 
 
 function finalizar() {
-    let res = window.document.getElementById('resultado')
     let ordem = valores
     let soma = 0
     let media = 0
@@ -101,6 +97,18 @@ function finalizar() {
         res.innerHTML += `A média dos valores digitados é: ${media.toFixed(2)}  <br>`
         res.innerHTML += ` <br>`
     }
-    
-    
+}
+
+
+function resetar() {
+    let n = valores.length
+
+    if (n > 0) {    // resetar as select
+        for (let i = n; i >= 1 ; i--) {
+            sord.remove(sord.length-1)
+            cord.remove(cord.length-1);
+        }
+    }
+    valores = [-1]
+    res.innerHTML = 'Todos os dados foram resetados!!'
 }

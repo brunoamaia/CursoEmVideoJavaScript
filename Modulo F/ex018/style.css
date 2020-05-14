@@ -37,6 +37,11 @@ select{
     width: 180px;
 }
 
+.botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
 #resultado {
     text-align: left;
 }
