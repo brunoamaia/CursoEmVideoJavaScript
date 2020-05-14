@@ -21,13 +21,22 @@ function adicionar(valores=[]) {
 
     valores.push(number)
 
-    let c1 = 1
+    let n = valores.length
+
+    let c1 = n
+
+    window.alert(c1)
     let itema = document.createElement('option') // Criar uma opção para o select - é necessário para o PHP
-    itema.text = `Valor ${number} adicionado.`  // texto da opção
+    itema.text = `Valor ${valores[c1-1]} adicionado.`  // texto da opção
     itema.value = `tab${c1}`                     // Valor da opção (PHP)
     sord.appendChild(itema)
+    window.alert('item A')
+
+ 
     
 
+    number = valores
+    number.sort()
     let c2 = 1
     let itemb = document.createElement('option') // Criar uma opção para o select - é necessário para o PHP
     itemb.text = `${number}`  // texto da opção
